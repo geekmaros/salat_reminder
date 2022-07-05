@@ -1,0 +1,27 @@
+{
+  "name": "Salat Reminder",
+  "description": "An extension that reminds you to pray when engrossed with work",
+  "version": "1",
+  "manifest_version": 3,
+  "icons": {
+    "16": "images/16x16.png",
+    "32": "images/32x32.png",
+    "48": "images/48x48.png",
+    "128": "images/128x128.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["utils.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

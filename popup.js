@@ -1,4 +1,4 @@
-import {sendMessage} from "./utils.js";
+import {getSalatTimes, sendMessage} from "./utils.js";
 
 const stopAdhanButton = document.querySelector('.stop-adhan-button');
 
@@ -11,3 +11,7 @@ stopAdhanButton.addEventListener('click', () => {
         })
         .catch(error => console.log(error));
 });
+
+const times = await  getSalatTimes()
+
+console.log(times);

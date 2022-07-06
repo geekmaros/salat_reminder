@@ -1,10 +1,12 @@
+
 let utils = {};
 (async () => {
     const utilsSrc = chrome.runtime.getURL('utils.js');
     utils = await import(utilsSrc);
     console.log(utils)
-    const time = await utils.getSalatTimes();
-    console.log(time);
+
+
+    // setInterval(utils.compareApiTimeWithLocalTime(12), 1000)
 })()
 
 

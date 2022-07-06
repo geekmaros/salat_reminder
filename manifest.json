@@ -1,7 +1,7 @@
 {
   "name": "Salat Reminder",
   "description": "An extension that reminds you to pray when engrossed with work",
-  "version": "1",
+  "version": "1.0",
   "manifest_version": 3,
   "icons": {
     "16": "images/16x16.png",

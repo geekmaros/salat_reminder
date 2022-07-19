@@ -1,16 +1,15 @@
-import {getSalatTimes, setAlarm, getUserLocation, repeatEvery, stopAdhan} from "./utils.js";
+import {getSalatTimes, setAlarm, getUserLocation, HELLO, repeatEvery, sendMessage, stopAdhan} from "./utils.js";
 
 const stopAdhanButton = document.querySelector('.stop-adhan-button');
 
-console.log(stopAdhanButton);
 
 stopAdhanButton.addEventListener('click', () => {
-    // sendMessage({type: 'stop', payload: 'Stop adhan'})
-    //     .then(response => {
-    //         console.log(response);
-    //     })
-    //     .catch(error => console.log(error));
-    stopAdhan();
+    sendMessage({type: HELLO, payload: 'Stop adhan'})
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => console.log(error));
+    // stopAdhan();
 });
 
 

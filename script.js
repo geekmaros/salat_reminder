@@ -11,10 +11,9 @@ let utils = {};
 
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
-    console.log(request.type)
-if(request.type === 'stop'){
-    console.log(request.payload);
+if(request.type === utils.HELLO){
+    console.log(request.payload, 'from trigger');
     sendResponse({payload: 'got a ping and here is your response'});
-    sendResponse({payload: 'Adhan stopped'});
+    // sendResponse({payload: 'Adhan stopped'});
 }
 });

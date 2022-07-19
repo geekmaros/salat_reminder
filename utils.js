@@ -11,7 +11,7 @@ export const sendMessage = async (msg) => {
         if(!tabs.length) return ('no active tab');
          chrome.tabs.sendMessage(tabs[0].id, msg, (response) => {
             if(response && response.payload) return response.payload;
-            return response;
+            return ('no response');
         });
     }catch (e) {
         return  e || chrome.runtime.lastError;
@@ -92,16 +92,18 @@ export const getRealTime = () => {
 export const setAlarm = (data) => {
     const time = data.timings;
 
-
     //the time variable is for testing purposes
     // const time = {
     //     asr: '1:45',
-    //     dhur: '20:48',
+    //     dhur: '19:18',
     // }
     const timeGan = getRealTime();
     const timeObj = Object.values(time).includes(timeGan);
     if(timeObj) {
+        console.log('its time to pray');
         playAdhan()
+    }else {
+        console.log('not time to pray');
     }
 }
 

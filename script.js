@@ -10,7 +10,7 @@ let utils = {};
 })()
 
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
+chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
 if(request.type === utils.HELLO){
     console.log(request.payload, 'from trigger');
     sendResponse({payload: 'got a ping and here is your response'});

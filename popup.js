@@ -6,7 +6,7 @@ const stopAdhanButton = document.querySelector('.stop-adhan-button');
 stopAdhanButton.addEventListener('click', () => {
     sendMessage({type: HELLO, payload: 'Stop adhan'})
         .then(response => {
-            console.log(response);
+            console.log('Here is the response from Script:',response);
         })
         .catch(error => console.log(error));
     // stopAdhan();
